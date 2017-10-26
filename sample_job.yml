@@ -1,0 +1,15 @@
+- job:
+    block-downstream: false
+    block-upstream: false
+    builders:
+      - shell: |
+          echo hello world at $(date)!
+          echo "This is my environment:"
+          env
+    concurrent: false
+    description: null
+    disabled: false
+    name: Demo job
+    project-type: freestyle
+    triggers:
+      - timed: '* * * * *'
